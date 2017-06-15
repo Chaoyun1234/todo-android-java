@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        MobileCenter.start(getApplication(), "baac9173-975b-43f4-b34c-8dc7f3e08718",
+        MobileCenter.start(getApplication(), "2e4f3907-e90c-4dd6-b4a7-51aa63fe77a6",
                 Analytics.class, Crashes.class);
         Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
