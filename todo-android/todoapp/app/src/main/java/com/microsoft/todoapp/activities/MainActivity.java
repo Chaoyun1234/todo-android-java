@@ -49,7 +49,16 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton(R.string.add, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                saveTask(String.valueOf(taskEditText.getText()));
+                                try {
+                                    saveTask(String.valueOf(taskEditText.getText()));
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                                if (which == 2) {
+                                    Crashes.isEnabled();
+                                    Crashes.generateTestCrash();
+                                }
+
                             }
                         })
                         .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -87,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         TextView taskTextView = (TextView) ((View) view.getParent()).findViewById(R.id.task_title);
         mHelper.deleteTask(String.valueOf(taskTextView.getText()));
         updateUI();
-        //throw new Exception();
+        throw new Exception();
     }
 
     private void updateUI() {
