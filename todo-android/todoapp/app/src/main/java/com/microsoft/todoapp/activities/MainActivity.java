@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import com.microsoft.azure.mobile.MobileCenter;
 import com.microsoft.azure.mobile.analytics.Analytics;
 import com.microsoft.azure.mobile.crashes.Crashes;
+import com.microsoft.azure.mobile.push.Push;
+
 public class MainActivity extends AppCompatActivity {
 
     private DatabaseHelper mHelper;
@@ -28,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Push.setListener(new MyPushListener());
         MobileCenter.start(getApplication(), "2e4f3907-e90c-4dd6-b4a7-51aa63fe77a6",
-                Analytics.class, Crashes.class);
+                Analytics.class, Crashes.class, Push.class);
         Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
         Analytics.trackEvent("onClick");

@@ -5,6 +5,7 @@
     <string name="cancel">Cancel</string>
     <string name="name">Name</string>
     <string name="type">Type</string>
+    <string name="push_toast">Push clicked with data=%1s</string>
 
     <string-array name="task_types">
         <item>Personal</item>
