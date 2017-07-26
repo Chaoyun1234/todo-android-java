@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Push.setListener(new MyPushListener());
-        MobileCenter.start(getApplication(), "d5c64a90-ce0b-4700-a239-49006927c16e",
+        MobileCenter.start(getApplication(), "2e4f3907-e90c-4dd6-b4a7-51aa63fe77a6",
                 Analytics.class, Crashes.class, Push.class);
         Analytics.trackEvent("add_button");
         Analytics.trackEvent("updateUI");
